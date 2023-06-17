@@ -340,7 +340,55 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(polyglotr)</span></code></pre></div>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>The <code>polyglotr</code> package is a language translation tool for
+the R programming language. It provides convenient functions to
+translate text using different (free) translation services. This
+vignette will guide you through the usage of the package and demonstrate
+how to translate text and files in various languages.</p>
+</div>
+<div id="installation" class="section level1">
+<h1>Installation</h1>
+<p>You can install the <code>polyglotr</code> package from CRAN using
+the following command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(polyglotr)</span></code></pre></div>
+</div>
+<div id="basic-usage" class="section level1">
+<h1>Basic usage</h1>
+<div id="translating-text" class="section level2">
+<h2>Translating Text</h2>
+<p>To translate text using the <code>polyglotr</code> package, you can
+use the <code>mymemory_translate</code> and
+<code>google_translate</code> functions. Here’s an example of how to
+translate a simple phrase:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>text <span class="ot">&lt;-</span> <span class="st">&quot;Hello, how are you?&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Translate using MyMemory Translation API</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>translation_mymemory <span class="ot">&lt;-</span> <span class="fu">mymemory_translate</span>(text, <span class="at">target_language =</span> <span class="st">&quot;fr&quot;</span>, <span class="at">source_language =</span> <span class="st">&quot;en&quot;</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co"># Translate using Google Translate</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>translation_google <span class="ot">&lt;-</span> <span class="fu">google_translate</span>(text, <span class="at">target_language =</span> <span class="st">&quot;fr&quot;</span>, <span class="at">source_language =</span> <span class="st">&quot;en&quot;</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="fu">cat</span>(translation_mymemory)</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; Bonjour, comment allez-vous ?</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="fu">cat</span>(translation_google)</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt; Bonjour comment allez-vous?</span></span></code></pre></div>
+</div>
+<div id="translating-files" class="section level2">
+<h2>Translating Files</h2>
+<p>The package also provides a function, <code>translate_file</code>, to
+translate the content of a file. Here’s an example:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Translate the content of a file using Google Translate</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co"># translate_file(&quot;path/to/file.txt&quot;, target_language = &quot;fr&quot;, source_language = &quot;en&quot;, overwrite = TRUE)</span></span></code></pre></div>
+<p>In the above example, the content of the file “file.txt” is
+translated from English to French using Google Translate. The translated
+content replaces the original content if the <code>overwrite</code>
+parameter is set to <code>TRUE</code>. Otherwise, a new file with the
+translated content is created.</p>
+</div>
+</div>
 
 
 
