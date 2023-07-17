@@ -362,19 +362,18 @@ the following command:</p>
 use the <code>mymemory_translate</code> and
 <code>google_translate</code> functions. Here’s an example of how to
 translate a simple phrase:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>text <span class="ot">&lt;-</span> <span class="st">&quot;Hello, how are you?&quot;</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Translate using MyMemory Translation API</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>translation_mymemory <span class="ot">&lt;-</span> <span class="fu">mymemory_translate</span>(text, <span class="at">target_language =</span> <span class="st">&quot;fr&quot;</span>, <span class="at">source_language =</span> <span class="st">&quot;en&quot;</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co"># Translate using Google Translate</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>translation_google <span class="ot">&lt;-</span> <span class="fu">google_translate</span>(text, <span class="at">target_language =</span> <span class="st">&quot;fr&quot;</span>, <span class="at">source_language =</span> <span class="st">&quot;en&quot;</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="fu">cat</span>(translation_mymemory)</span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; Bonjour, comment allez-vous ?</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="fu">cat</span>(translation_google)</span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt; Bonjour comment allez-vous?</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>text <span class="ot">&lt;-</span> <span class="st">&quot;Hello, how are you?&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># Translate using MyMemory Translation API</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>translation_mymemory <span class="ot">&lt;-</span> <span class="fu">mymemory_translate</span>(text, <span class="at">target_language =</span> <span class="st">&quot;fr&quot;</span>, <span class="at">source_language =</span> <span class="st">&quot;en&quot;</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co"># Translate using Google Translate</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>translation_google <span class="ot">&lt;-</span> <span class="fu">google_translate</span>(text, <span class="at">target_language =</span> <span class="st">&quot;fr&quot;</span>, <span class="at">source_language =</span> <span class="st">&quot;en&quot;</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="fu">cat</span>(translation_mymemory)</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; Bonjour, comment allez-vous ?</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="fu">cat</span>(translation_google)</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt; Bonjour comment allez-vous?</span></span></code></pre></div>
 </div>
 <div id="translating-files" class="section level2">
 <h2>Translating Files</h2>

@@ -8,7 +8,6 @@ knitr::opts_chunk$set(
 library(polyglotr)
 
 ## ----translate text-----------------------------------------------------------
-
 text <- "Hello, how are you?"
 
 # Translate using MyMemory Translation API
@@ -23,5 +22,4 @@ cat(translation_google)
 ## ----translate file-----------------------------------------------------------
 # Translate the content of a file using Google Translate
 # translate_file("path/to/file.txt", target_language = "fr", source_language = "en", overwrite = TRUE)
-
 

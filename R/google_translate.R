@@ -11,27 +11,48 @@
 #' @export
 #'
 #' @examples
-#'\donttest{
-#'google_translate("I love languages", target_language = "es")
-#'}
+#' \donttest{
+#' google_translate("I love languages", target_language = "es")
+#' text_to_translate <- c("the", "quick", "brown")
+#' google_translate (text_to_translate, "fr", "en")
+#' }
 google_translate <- function(text, target_language = "en", source_language = "auto") {
+  is_vector <- is.vector(text) && length(text) > 1
+
   formatted_text <- stringr::str_replace_all(text, " ", "%20")
 
-  formatted_link <- paste0("https://translate.google.com/m?tl=",
-                           target_language, "&sl=", source_language,
-                           "&q=",
-                           formatted_text)
+  formatted_link <- paste0(
+    "https://translate.google.com/m?tl=",
+    target_language, "&sl=", source_language,
+    "&q=",
+    formatted_text
+  )
 
-  response <- httr::GET(formatted_link)
+  if (is_vector) {
+    responses <- purrr::map(formatted_link, httr::GET)
 
-  translation <- httr::content(response) %>%
-    rvest::html_nodes("div.result-container") %>%
-    rvest::html_text()
+    translations <- purrr::map(responses, ~{
+      translation <- httr::content(.x) %>%
+        rvest::html_nodes("div.result-container") %>%
+        rvest::html_text()
 
-  translation <- urltools::url_decode(translation)
-  translation <- gsub("\n", "", translation)
+      translation <- urltools::url_decode(translation)
+      translation <- gsub("\n", "", translation)
 
-  return(translation)
+      translation
+    })
 
+    return(translations)
+  } else {
+    response <- httr::GET(formatted_link)
+
+    translation <- httr::content(response) %>%
+      rvest::html_nodes("div.result-container") %>%
+      rvest::html_text()
+
+    translation <- urltools::url_decode(translation)
+    translation <- gsub("\n", "", translation)
+
+    return(translation)
+  }
 }
-
