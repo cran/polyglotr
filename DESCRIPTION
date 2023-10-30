@@ -1,6 +1,6 @@
 Package: polyglotr
 Title: Translate Text
-Version: 1.2.1
+Version: 1.2.2
 Authors@R: 
     person("Tomer", "Iwan", , "t.iwan@vu.nl", role = c("aut", "cre", "cph"))
 Description: The goal of the this package is to provide easy methods to 
@@ -8,15 +8,17 @@ Description: The goal of the this package is to provide easy methods to
 License: MIT + file LICENSE
 URL: https://github.com/Tomeriko96/polyglotr/,
         https://tomeriko96.github.io/polyglotr/
+BugReports: https://github.com/Tomeriko96/polyglotr/issues
 Encoding: UTF-8
 RoxygenNote: 7.2.3
-Imports: dplyr, httr, magrittr, purrr, rlang, rvest, stringr, urltools
+Imports: dplyr, httr, magrittr, purrr, rlang, rvest, stringr, tibble,
+        urltools
 Suggests: knitr, rmarkdown, testthat (>= 3.0.0), text2vec
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2023-08-08 05:58:14 UTC; rstudio
+Packaged: 2023-10-30 09:47:16 UTC; tin900
 Author: Tomer Iwan [aut, cre, cph]
 Maintainer: Tomer Iwan <t.iwan@vu.nl>
 Repository: CRAN
-Date/Publication: 2023-08-08 08:30:02 UTC
+Date/Publication: 2023-10-30 10:00:02 UTC
