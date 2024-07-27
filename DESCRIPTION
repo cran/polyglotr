@@ -1,6 +1,6 @@
 Package: polyglotr
 Title: Translate Text
-Version: 1.5.0
+Version: 1.5.1
 Authors@R: 
     person("Tomer", "Iwan", , "t.iwan@vu.nl", role = c("aut", "cre", "cph"))
 Description: The goal of the this package is to provide easy methods to 
@@ -19,8 +19,8 @@ VignetteBuilder: knitr
 Depends: R (>= 2.10)
 LazyData: true
 NeedsCompilation: no
-Packaged: 2024-05-03 11:07:01 UTC; tin900
+Packaged: 2024-07-27 10:42:07 UTC; rstudio
 Author: Tomer Iwan [aut, cre, cph]
 Maintainer: Tomer Iwan <t.iwan@vu.nl>
 Repository: CRAN
-Date/Publication: 2024-05-03 12:50:02 UTC
+Date/Publication: 2024-07-27 11:10:02 UTC
