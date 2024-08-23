@@ -49,7 +49,7 @@ overflow: visible;
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,7 +60,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -356,21 +356,7 @@ external sources using the Linguee Translation API. Here’s an example
 usage:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>external_sources <span class="ot">&lt;-</span> <span class="fu">linguee_external_sources</span>(<span class="st">&quot;hello&quot;</span>, <span class="at">src =</span> <span class="st">&quot;en&quot;</span>, <span class="at">dst =</span> <span class="st">&quot;de&quot;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">print</span>(external_sources)</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co">#&gt; # A tibble: 30 × 4</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt;    src                                                     dst   src_url dst_url</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                                                   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  </span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt;  1 &quot;On this forehead of business to elevated cognitive co… &quot;Auf… http:/… http:/…</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt;  2 &quot;Hello and welcome to a project [...] that aims to col… &quot;Hal… http:/… http:/…</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt;  3 &quot;Hello people, you&#39;ll hardly believe [...] this, but i… &quot;Leu… http:/… http:/…</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt;  4 &quot;Wu Kun: Hello, everyone, very grateful [...] to all n… &quot;Wu … http:/… http:/…</span></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt;  5 &quot;Hello,I am Desperately looking [...] for a new home t… &quot;Hal… http:/… http:/…</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt;  6 &quot;The two children who are playing Slovakia and Hungary… &quot;Die… http:/… http:/…</span></span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt;  7 &quot;In our city, the local and foreign tourists, in a pea… &quot;In … http:/… http:/…</span></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt;  8 &quot;For example, soup is traditionally eaten in China at … &quot;So … http:/… http:/…</span></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt;  9 &quot;Example of application: In case you want to send an S… &quot;Anw… http:/… http:/…</span></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt; 10 &quot;It begins with mouth percussion, with playful greetin… &quot;Es … http:/… http:/…</span></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co">#&gt; # ℹ 20 more rows</span></span></code></pre></div>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">print</span>(external_sources)</span></code></pre></div>
 </div>
 <div id="translation-examples" class="section level2">
 <h2>Translation Examples</h2>
@@ -379,14 +365,7 @@ translation examples using the Linguee Translation API. Here’s an
 example usage:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>translation_examples <span class="ot">&lt;-</span> <span class="fu">linguee_translation_examples</span>(<span class="st">&quot;hello&quot;</span>, <span class="at">src =</span> <span class="st">&quot;en&quot;</span>, <span class="at">dst =</span> <span class="st">&quot;de&quot;</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="fu">print</span>(translation_examples)</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; # A tibble: 4 × 3</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt;   source           target            pos         </span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;            &lt;chr&gt;             &lt;chr&gt;       </span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; 1 say hello to     grüßen            verb        </span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; 2 say hello        guten Tag sagen   verb        </span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; 3 Hello everybody! Hallo allerseits! interjection</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; 4 big hello        großes Hallo      noun, neuter</span></span></code></pre></div>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="fu">print</span>(translation_examples)</span></code></pre></div>
 </div>
 <div id="word-translation" class="section level2">
 <h2>Word Translation</h2>
@@ -394,8 +373,7 @@ example usage:</p>
 word using the Linguee Translation API. Here’s an example usage:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>word_translation <span class="ot">&lt;-</span> <span class="fu">linguee_word_translation</span>(<span class="st">&quot;hello&quot;</span>, <span class="at">source_language =</span> <span class="st">&quot;en&quot;</span>, <span class="at">target_language =</span> <span class="st">&quot;de&quot;</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="fu">print</span>(word_translation)</span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Hallo&quot;      &quot;Hallo!&quot;     &quot;Guten Tag!&quot; &quot;Grüß Gott!&quot; &quot;Grüezi!&quot;</span></span></code></pre></div>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="fu">print</span>(word_translation)</span></code></pre></div>
 </div>
 </div>
 
