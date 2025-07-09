@@ -1,7 +1,7 @@
-cb5628a7f570e7f72cdaad89ac97c7a5 *DESCRIPTION
+52dfc2ffef6a824058412b356e8350fe *DESCRIPTION
 72966565546e45ea4035be3c9934915d *LICENSE
 68d35314145172ea8535029d92981941 *NAMESPACE
-0e3febe5b2b792c695e555a0e1576691 *NEWS.md
+35da81691859e7e3c8c8f511fd2b2191 *NEWS.md
 40956d04de1c1e09410109a37327df77 *R/batch_translate.R
 29b0ab77785a0390a981a912a8fdd55d *R/create_translation_table.R
 dd71169c8e36ce77f21592871966df51 *R/create_transliteration_table.R
@@ -33,7 +33,7 @@ cf794928715019cf81bd51d467156178 *R/utils-pipe.R
 4da562235ac89f56962dd3e3376f5b8a *R/wmcloud_translate.R
 d2251d6b5057cf413b43efa0f19e7704 *README.md
 f39ada84dfd45a9333b93f0408ec647f *build/vignette.rds
-6630ad4dd8a61ee04acea5d803d95865 *data/google_supported_languages.rda
+1e63a226d8c65e803b6ecc9650439bc0 *data/google_supported_languages.rda
 32744c686bae65a3689324dba194e53f *inst/doc/Linguee.R
 91031c684cdd32f5574f45a90120a0b1 *inst/doc/Linguee.Rmd
 00b723aac7dba735d56a95e526bb38c0 *inst/doc/Linguee.html
@@ -66,8 +66,8 @@ d166781ec96ad2cac03bc837699e59fc *man/microsoft_supported_languages.Rd
 129e3067a1c224e10b41b5ce1b70ccea *man/qcri_get_domains.Rd
 a772421da6e6eba02afd754e3accb6b4 *man/qcri_get_language_pairs.Rd
 0f00d6ab4e231ba2c26ef48649874688 *man/qcri_translate_text.Rd
-e7ccfcf727cc0613998269d48415ba7d *man/replace_urls_with_placeholders.Rd
-51b743b05192059e7060f2ba4e992ad9 *man/restore_urls_from_placeholders.Rd
+7cb775c745f21630c01a2ca512a3a9df *man/replace_urls_with_placeholders.Rd
+c2dfce5c45f429a2adaef64569c5db65 *man/restore_urls_from_placeholders.Rd
 c5da41c4a2e1614649853aead378df3c *man/translate_file.Rd
 a2b6e704484fa1e1f701b54e580e6ef0 *man/translate_to_morse.Rd
 bd95cf276b5c4fb976ef11009367eaf7 *man/translate_to_morse_audio.Rd
