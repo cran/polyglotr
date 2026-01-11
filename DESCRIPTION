@@ -1,8 +1,8 @@
 Package: polyglotr
 Title: Translate Text
-Version: 1.7.0
+Version: 1.7.1
 Authors@R: 
-    person("Tomer", "Iwan", , "t.iwan@vu.nl", role = c("aut", "cre", "cph"))
+    person("Tomer", "Iwan", , "iwantomer@hotmail.com", role = c("aut", "cre", "cph"))
 Description: Provide easy methods to translate pieces of text.
   Functions send requests to translation services online.
 License: MIT + file LICENSE
@@ -10,7 +10,7 @@ URL: https://github.com/Tomeriko96/polyglotr/,
         https://tomeriko96.github.io/polyglotr/
 BugReports: https://github.com/Tomeriko96/polyglotr/issues
 Encoding: UTF-8
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Imports: dplyr, httr, jsonlite, magrittr, purrr, RCurl, rlang, rvest,
         stringr, tibble, urltools
 Suggests: knitr, rmarkdown, testthat (>= 3.0.0), text2vec, shiny,
@@ -20,8 +20,8 @@ VignetteBuilder: knitr
 Depends: R (>= 3.5.0)
 LazyData: true
 NeedsCompilation: no
-Packaged: 2025-07-23 06:31:32 UTC; tin900
+Packaged: 2026-01-10 13:57:21 UTC; tomer
 Author: Tomer Iwan [aut, cre, cph]
-Maintainer: Tomer Iwan <t.iwan@vu.nl>
+Maintainer: Tomer Iwan <iwantomer@hotmail.com>
 Repository: CRAN
-Date/Publication: 2025-07-23 07:10:09 UTC
+Date/Publication: 2026-01-11 06:10:40 UTC
