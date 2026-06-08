@@ -1,3 +1,18 @@
+# polyglotr 1.7.4
+* Fixed 301-redirect URL for QCRI in README.md: replaced `qcri.org` with `hbku.edu.qa/en/qcri`.
+* Removed `linguee_external_sources()`, `linguee_translation_examples()`, and `linguee_word_translation()` — the upstream API (`linguee-api.fly.dev`) is no longer available.
+
+# polyglotr 1.7.3
+* Fixed dead URL in README.md: replaced defunct mt.qcri.org/api/ with qcri.org.
+* Added weekly lychee link-check CI workflow.
+
+# polyglotr 1.7.2
+* All functions that use internet resources now fail gracefully with an informative
+  message when the service is unavailable (CRAN policy compliance). Network-level
+  errors (DNS failure, connection refused, timeout) are caught via `tryCatch()` and
+  reported via `message()` rather than propagating as errors.
+* `wikipedia_get_language_names()` example wrapped in `\donttest{}`.
+
 # polyglotr 1.7.1
 * Changed maintainer email address.
 

@@ -1,6 +1,6 @@
 Package: polyglotr
 Title: Translate Text
-Version: 1.7.1
+Version: 1.7.4
 Authors@R: 
     person("Tomer", "Iwan", , "iwantomer@hotmail.com", role = c("aut", "cre", "cph"))
 Description: Provide easy methods to translate pieces of text.
@@ -20,8 +20,8 @@ VignetteBuilder: knitr
 Depends: R (>= 3.5.0)
 LazyData: true
 NeedsCompilation: no
-Packaged: 2026-01-10 13:57:21 UTC; tomer
+Packaged: 2026-06-08 07:27:44 UTC; dev
 Author: Tomer Iwan [aut, cre, cph]
 Maintainer: Tomer Iwan <iwantomer@hotmail.com>
 Repository: CRAN
-Date/Publication: 2026-01-11 06:10:40 UTC
+Date/Publication: 2026-06-08 08:20:02 UTC

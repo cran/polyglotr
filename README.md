@@ -2,26 +2,8 @@
 <p align="center">
   <img src="man/figures/hex-polyglotr.png" alt="polyglotr" height="200">
 </p>
-<h1 align="center">polyglotr | Multilingual Text Translation</h1>
-<div align="center">
-  <strong>Versatile R Package for Text Translation</strong><br>
-  Seamless integration with multiple free translation services for R users.<br>
-  <sub>Ideal for translating text, files, and creating multilingual datasets.</sub>
-</div>
-<div align="center">
-  <h3>
-    <a href="https://CRAN.R-project.org/package=polyglotr/">CRAN</a> <span> | </span>
-    <a href="#features">Features</a> <span> | </span>
-    <a href="#installation">Installation</a> <span> | </span>
-    <a href="#usage">Usage</a> <span> | </span>
-    <a href="#contribution">Contribution</a>
-  </h3>
-</div>
-<div align="center">
-  <sub>Built by <a href="https://github.com/Tomeriko96">Tomeriko96</a> and <a href="https://github.com/Tomeriko96/polyglotr/graphs/contributors">contributors</a>.</sub>
-</div>
+<h1 align="center">polyglotr</h1>
 <p align="center">
-  <a href="https://app.codecov.io/gh/tomeriko96/polyglotr?branch=main"><img src="https://codecov.io/gh/tomeriko96/polyglotr/branch/main/graph/badge.svg" alt="Codecov test coverage"></a>
   <a href="https://github.com/Tomeriko96/polyglotr/actions/workflows/R-CMD-check.yaml"><img src="https://github.com/Tomeriko96/polyglotr/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a>
   <a href="https://CRAN.R-project.org/package=polyglotr/"><img src="https://www.r-pkg.org/badges/version/polyglotr" alt="CRAN status"></a>
   <a href="https://cran.r-project.org/package=polyglotr/"><img src="https://cranlogs.r-pkg.org/badges/last-month/polyglotr?color=green/" alt="CRAN last month downloads"></a>
@@ -30,220 +12,70 @@
   <a href="https://edulytics.shinyapps.io/polyglotr/" target="_blank"><img src="https://img.shields.io/badge/Shiny%20App-Live-blue?logo=R" alt="Shiny App Deployed"></a>
 </p>
 
+R package for text translation via free APIs — no API keys needed for most services.
 
+Supports [Google Translate](https://translate.google.com/m), [Apertium](https://apertium.org/apy/), [MyMemory](https://mymemory.translated.net/), [PONS](https://en.pons.com/translate), [QCRI](https://www.hbku.edu.qa/en/qcri), and [Wikimedia Translation](https://translate.wmcloud.org/).
 
-## Table of Contents
-- [Overview](#overview-)
-- [Features](#features-)
-- [Installation](#installation-)
-- [Quick Start](#quick-start-)
-- [Shiny Web App](#shiny-web-app-)
-- [Usage](#usage-)
-- [Documentation](#documentation-)
-- [Contribution](#contribution-)
-- [License](#license-️)
-- [Citation](#citation-)
-- [Related Projects](#related-projects-)
+## Installation
 
-
-
-# Overview
-
-The `polyglotr` package is a language translation tool for the R programming language. It provides convenient functions to translate text using different (free) translation services. This vignette will guide you through the usage of the package and demonstrate how to translate text and files in various languages.
-
-Currently, the package has functions to communicate with the following services:
-
--   [Google Translate](https://translate.google.com/m) API
--   [Apertium](https://apertium.org/apy/) API
--   [Mymemory](https://mymemory.translated.net/) API
--   [Linguee](https://www.linguee.com/) API
--   [Pons](https://en.pons.com/translate) API
--   [QCRI](https://mt.qcri.org/api/) API
--   [Wikimedia Translation](https://translate.wmcloud.org/) API
-
-
-## Why polyglotr?
-
-`polyglotr` stands out as a versatile and user-friendly translation tool for R users. Here's why you should consider using it:
-
-
-1. **No Authentication Hassle**
-   - Access multiple translation services without API keys or complex authentication.
-   - Start translating immediately after installation, with no sign-ups or accounts.
-
-2. **Multiple Services, One Package**
-   - Use various translation services (Google, Mymemory, Linguee, Pons, QCRI, Wikimedia) through a single interface.
-   - Easily switch between services to compare translations or find the best fit.
-
-3. **R-Native Solution**
-   - Integrate translation capabilities into your R workflows and data analysis pipelines.
-   - Benefit from R's data manipulation strengths while translating.
-
-4. **Flexibility and Scalability**
-   - Translate single phrases, large datasets, or entire files with equal ease.
-   - Create multilingual datasets using built-in functions.
-
-5. **Open Source and Community-Driven**
-   - Continuous improvements and updates driven by user feedback and contributions.
-   - Adapt the package to your needs by accessing and modifying the source code.
-
-6. **Comprehensive Documentation**
-   - Get started quickly with extensive documentation, vignettes, and examples.
-   - Access a wide range of use cases and best practices.
-
-By choosing polyglotr, you're opting for a powerful, flexible, and user-friendly translation solution that integrates seamlessly with your R environment, all without the barriers of authentication or service-specific setups.
-
-
-
-# Features
-
-- Translate text using multiple free translation services
-- Batch translation capabilities
-- Language detection
-- Create translation tables for multiple languages
-- File translation
-- Easy-to-use interface for different translation APIs
-- **NEW: Interactive Shiny web application for non-R users**
-
-To see which functions are available, please refer to the reference page of the `polyglotr` package. The [reference](https://Tomeriko96.github.io/polyglotr/reference/index.html) page provides a comprehensive list of functions available in the package, organized by category.
-
-Additionally, the package includes vignettes that provide more detailed information on how to use the functions in the package.
-
-
-# Installation
-
-To install the package:
-
-```{r}
-# The easiest way is to get polyglotr from CRAN
+```r
 install.packages("polyglotr")
 
-# Alternatively, install the development version from GitHub
-# install.packages("remotes")
+# development version
 remotes::install_github("Tomeriko96/polyglotr")
 ```
 
-
-
-# Quick Start
-
-Here's a minimal example to get you started: 
-
-```
-library(polyglotr)
-
-# Translate a simple phrase using Google Translate
-text <- "Hello, world!"
-translation <- google_translate(text, target_language = "fr")
-print(translation)
-
-# Translate using Apertium (no API key required)
-translation_apertium <- apertium_translate(text, target_language = "es", source_language = "en")
-print(translation_apertium)
-
-```
- 
-
-
-# Shiny Web App
-
-<a href="https://edulytics.shinyapps.io/polyglotr/" target="_blank"><img src="https://img.shields.io/badge/Shiny%20App-Live-blue?logo=R" alt="Shiny App Deployed"></a>
-
-`polyglotr` includes a web application for translation services, accessible to users without R programming knowledge.
-
-## Launching the App
+## Usage
 
 ```r
 library(polyglotr)
-launch_polyglotr_app()
-# Or with custom settings
-launch_polyglotr_app(port = 3838, launch.browser = TRUE)
+
+google_translate("Hello, world!", target_language = "fr")
+
+apertium_translate("Hello, world!", target_language = "es", source_language = "en")
 ```
 
-## App Features
-
-- Multiple translation services: Google Translate, MyMemory, PONS, Linguee, QCRI, Apertium, Wikimedia Cloud
-- Language detection
-- Dynamic language selection based on service
-- User-friendly dashboard interface
-- No coding required
-
-## Installation Requirements
-
-To use the Shiny app, install these additional packages:
+Translate multiple texts into multiple languages at once:
 
 ```r
-install.packages(c("shiny", "shinydashboard", "DT"))
-```
-
-
-
-# Usage
-
-To demonstrate the usage of the `polyglotr` package, let's consider an example where we translate a list of texts into multiple languages using the `create_translation_table` function.
-
-```{r}
-texts <- c("Hello, how are you?", 
-           "I love programming!", 
-           "This is a test.")
-
-languages <- c("es", 
-              "fr", 
-              "de")
-
+texts <- c("Hello, how are you?", "I love programming!", "This is a test.")
+languages <- c("es", "fr", "de")
 
 create_translation_table(texts, languages)
 
-
-#>        Original_word                     es
-#> 1 Hello, how are you?     ¿Hola, cómo estás?
-#> 2 I love programming! ¡Me encanta programar!
-#> 3     This is a test.    Esto es una prueba.
-#>                           fr                       de
-#> 1 Bonjour comment allez-vous?   Hallo, wie geht's dir?
-#> 2        J'adore programmer ! Ich liebe Programmieren!
-#> 3              C'est un test.        Das ist ein Test.
-
+#>        Original_word                     es                          fr                       de
+#> 1 Hello, how are you?     ¿Hola, cómo estás? Bonjour comment allez-vous?   Hallo, wie geht's dir?
+#> 2 I love programming! ¡Me encanta programar!        J'adore programmer ! Ich liebe Programmieren!
+#> 3     This is a test.    Esto es una prueba.              C'est un test.        Das ist ein Test.
 ```
 
+See the [reference page](https://Tomeriko96.github.io/polyglotr/reference/index.html) for all functions and the [vignettes](https://Tomeriko96.github.io/polyglotr/articles/) for detailed examples.
 
-# Documentation
+## Shiny App
 
-- [Package Website](https://Tomeriko96.github.io/polyglotr/)
-- [Reference Manual](https://Tomeriko96.github.io/polyglotr/reference/index.html)
-- [Vignettes](https://Tomeriko96.github.io/polyglotr/articles/)
+<a href="https://edulytics.shinyapps.io/polyglotr/" target="_blank"><img src="https://img.shields.io/badge/Shiny%20App-Live-blue?logo=R" alt="Shiny App Deployed"></a>
 
+A web UI for non-R users. Requires `shiny`, `shinydashboard`, and `DT`.
 
+```r
+launch_polyglotr_app()
+```
 
-# Contribution
+## Contributing
 
-Contributions are welcome! If you'd like to contribute, please:
+PRs welcome. Fork, branch, and open a pull request against `main`.
 
-1. Fork the repository
-2. Create your feature branch (git checkout -b feature/AmazingFeature)
-3. Commit your changes (git commit -m 'Add some AmazingFeature')
-4. Push to the branch (git push origin feature/AmazingFeature)
-5. Open a Pull Request
+## License
 
+MIT — see [LICENSE](LICENSE).
 
-# License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-
-
-# Citation
-
-If you use polyglotr in your research, please cite it as follows:
-
+## Citation
 
 ```
-Iwan, T. (2023). polyglotr: Multilingual Text Translation in R. R package version 1.0.0.
+Iwan, T. (2023). polyglotr: Multilingual Text Translation in R.
 https://github.com/Tomeriko96/polyglotr
 ```
 
-
-
-# Related Projects
+## Related
 
 - [googleLanguageR](https://github.com/ropensci/googleLanguageR): R client for the Google Translation API, Cloud Natural Language API, Cloud Speech API, and Cloud Text-to-Speech API

@@ -22,12 +22,16 @@
 #'   preserve_newlines = TRUE
 #' )
 #' }
-google_translate_long_text <- function(text, 
-                                       target_language = "en", 
-                                       source_language = "auto", 
+google_translate_long_text <- function(text,
+                                       target_language = "en",
+                                       source_language = "auto",
                                        chunk_size = 1000,
                                        preserve_newlines = FALSE) {
-  
+  .Deprecated("google_translate", msg = paste(
+    "'google_translate_long_text' is deprecated.",
+    "Use 'google_translate()', which now handles long texts automatically."
+  ))
+
   # Validation checks
   if (!google_is_valid_language_code(target_language)) {
     stop("Invalid target language code: ", target_language)
@@ -53,22 +57,17 @@ google_translate_long_text <- function(text,
     encoded_text <- urltools::url_encode(chunk)
     api_url <- sprintf(
       "https://translate.google.com/m?tl=%s&sl=%s&q=%s",
-      target_language, 
+      target_language,
       source_language,
       encoded_text
     )
-    
-    response <- httr::GET(api_url)
+    response <- safe_http(httr::GET(api_url), "Google Translate")
+    if (is.null(response)) return(NA_character_)
     translated <- httr::content(response) %>%
       rvest::html_nodes("div.result-container") %>%
       rvest::html_text()
-    
     decoded <- urltools::url_decode(translated)
-    
-    # Conditional newline handling
-    if (!preserve_newlines) {
-      decoded <- gsub("\n", " ", decoded)
-    }
+    if (!preserve_newlines) decoded <- gsub("\n", " ", decoded)
     decoded
   })
   
